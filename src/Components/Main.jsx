@@ -138,14 +138,23 @@ a:hover:after{
                  
             
               })}
+              const getCat3 = () =>{
+                axios(`https://www.fotmob.com/api/matches?date=${Number(dates)-1}&timezone=Asia%2FDhaka&ccode3=BGD`)
+                        .then(data2 => { const data = data2.data
+                            console.log(data)
+                            setDetails(data)
+                            setDates(data.date)
+                     
+                
+                  })}
   return (
     <Wrapper >
             {/* <div>
                 <h1> Today  </h1>
             </div> */}
             <div>
-                <h1 className='big-heading'> Today {details.date}            </h1> 
-                <h4 className='big-heading' onClick={getCat2}> next day        </h4> 
+                <h4  onClick={getCat3}>   Previous day   </h4>    <h1 className='big-heading'> Today {details.date}            </h1> 
+                <h4  onClick={getCat2}>  Next day  </h4> 
 
             </div>
             {/* <div>
