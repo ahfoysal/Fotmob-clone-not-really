@@ -1,0 +1,34 @@
+
+style={{ paddingTop: '2rem' }}
+
+
+
+ @media (max-width: 1080px){
+
+
+}
+  @media (max-width: 768px){
+  
+}
+
+
+
+
+
+
+import React from 'react'
+import styled from 'styled-components'
+
+const About = () => {
+    const Wrapper = styled.section`
+        
+    `
+  return (
+    <Wrapper>
+        
+        
+    </Wrapper>
+  )
+}
+
+export default About
