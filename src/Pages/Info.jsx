@@ -126,8 +126,8 @@ a:hover:after{
     const getCat = () =>{
         axios({
             method: 'get',
-            url: `https://proxy.cors.sh/https://www.fotmob.com/api/matchDetails?matchId=${param}`,
-            headers: {'Origin': `https://www.fotmob.com/api/matchDetails?matchId=${param}`,
+            url: `https://proxy.cors.sh/https://www.fotmob.com/api/matchDetails?matchId=${param}&timezone=Asia%2FDhaka&ccode3=BGD`,
+            headers: {'Origin': `https://www.fotmob.com/api/matchDetails?matchId=${param}&timezone=Asia%2FDhaka&ccode3=BGD`,
             'x-cors-api-key': `temp_daeedd8e97154a6570229c1dc57ee197`
         }
         }).then(data2 => { const data = data2.data
