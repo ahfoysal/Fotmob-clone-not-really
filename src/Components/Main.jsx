@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import axios from "axios";
+import { Link } from 'react-router-dom';
+
 
 const HeroSection = () => {
     const [details , setDetails] = useState([]);
@@ -9,8 +11,8 @@ const HeroSection = () => {
     var y = x.getFullYear().toString();
     var m = (x.getMonth() + 1).toString();
     var d = x.getDate().toString();
-    (d.length == 1) && (d = '0' + d);
-    (m.length == 1) && (m = '0' + m);
+    (d.length === 1) && (d = '0' + d);
+    (m.length === 1) && (m = '0' + m);
     var yyyymmdd = y + m + d;
     const [dates , setDates] = useState(yyyymmdd);
 
@@ -125,7 +127,7 @@ a:hover:after{
                 .then(data2 => { const data = data2.data
                     console.log(data)
                     setDetails(data)
-             
+                    setDates(data.date)
         
           })}
 
@@ -153,7 +155,7 @@ a:hover:after{
                 <h1> Today  </h1>
             </div> */}
             <div>
-                <h4  onClick={getCat3}>   Previous day   </h4>    <h1 className='big-heading'> Today {details.date}            </h1> 
+                <h4  onClick={getCat3}>   Previous day   </h4>    <h1 className='big-heading' onClick={getCat}> Today {details.date}            </h1> 
                 <h4  onClick={getCat2}>  Next day  </h4> 
 
             </div>
@@ -172,20 +174,21 @@ a:hover:after{
             <div>
                 <div>
                 { details?.leagues?.map(team => (
-                        <div key={team?.id}> <p> {team?.name}</p>
+                    <div key={team?.id}> <p> {team?.name}</p>
                          { team?.matches?.map(test => (
-                        <div key={test?.id}> <p> {test?.home.name} {test?.home?.score} -  {test.away.score}{test.away.name}
+                            
+                        <div key={test?.id}> <Link to={`/match/${test.id}`}><p> {test?.home.name} {test?.home?.score} -  {test.away.score}{test.away.name}
                         ({test?.status?.finished === true &&  <p>FT</p>}
                         <p>{test?.status?.liveTime?.long}</p>)
                         </p>
-                        
+                        </Link>
 
                         
                          </div>
         )) }
                         <br></br>
                          </div>
-        )) }
+        ))  }
                 </div>
             </div>
 

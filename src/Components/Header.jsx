@@ -188,14 +188,14 @@ a span:hover, a span:focus {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                     <div className="header-items">
                         <ol className='order-list'>
-                    <a href="#about">    <li>  <span>About</span></li></a>
+                    {/* <a href="#about">    <li>  <span>About</span></li></a>
                     <a href="#about">    <li>  <span>Experience</span></li></a>
                     <a href="#about">    <li>  <span>Projects</span></li></a>
-                    <a href="#about">    <li>  <span>Contact</span></li></a>
+                    <a href="#about">    <li>  <span>Contact</span></li></a> */}
                         
                         </ol>
                         <div className="button"  style={{ transitionDelay: '4000' }}>
-                            <a href="#download" className='resume-button'>Resume</a>
+                            {/* <a href="#download" className='resume-button'>Resume</a> */}
                         </div>
 
                     </div>
