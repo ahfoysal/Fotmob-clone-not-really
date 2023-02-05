@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 
 const HeroSection = () => {
@@ -16,7 +16,8 @@ const HeroSection = () => {
     var yyyymmdd = y + m + d;
     const [dates , setDates] = useState(yyyymmdd);
 
-    
+    let params = useParams();
+    const param = params.name
 
     const Wrapper = styled.section`
     display: flex;
@@ -108,7 +109,7 @@ a:hover:after{
     `
       useEffect(() => {
         getCat();
-
+        console.log(param)
 
 
     
@@ -123,36 +124,26 @@ a:hover:after{
   }, []);
 
     const getCat = () =>{
-        axios(`https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
-                .then(data2 => { const data = data2.data
-                    console.log(data)
-                    setDetails(data)
-                    setDates(data.date)
-        
-          })}
+        axios({
+            method: 'get',
+            url: `https://proxy.cors.sh/https://www.fotmob.com/api/matchDetails?matchId=${param}`,
+            headers: {'Origin': `https://www.fotmob.com/api/matchDetails?matchId=${param}`,
+            'x-cors-api-key': `temp_daeedd8e97154a6570229c1dc57ee197`
+        }
+        }).then(data2 => { const data = data2.data
+            console.log(data)
+            setDetails(data)
+            setDates(data.date)
+     
 
-          const getCat2 = () =>{
-            axios(`https://www.fotmob.com/api/matches?date=${Number(dates)+1}&timezone=Asia%2FDhaka&ccode3=BGD`)
-                    .then(data2 => { const data = data2.data
-                        console.log(data)
-                        setDetails(data)
-                        setDates(data.date)
-                 
-            
-              })}
-              const getCat3 = () =>{
-                axios(`https://www.fotmob.com/api/matches?date=${Number(dates)-1}&timezone=Asia%2FDhaka&ccode3=BGD`)
-                        .then(data2 => { const data = data2.data
-                            console.log(data)
-                            setDetails(data)
-                            setDates(data.date)
-                     
-                
-                  })}
+  })
+        }
+
+         
   return (
     <Wrapper >
             <div>
-                <h1> Under Development  </h1>
+                <h1> {details?.general?.matchName} </h1>
             </div>
             
            
