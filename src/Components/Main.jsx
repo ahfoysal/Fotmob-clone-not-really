@@ -126,7 +126,7 @@ a:hover:after{
 
         axios({
             method: 'get',
-            url: `https://cors-anywhere.herokuapp.com/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
+            url: `https://proxy.cors.sh/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
             headers: {'Origin': `https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`}
         }).then(data2 => { const data = data2.data
             console.log(data)
