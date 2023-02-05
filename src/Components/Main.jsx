@@ -123,13 +123,27 @@ a:hover:after{
   }, []);
 
     const getCat = () =>{
-        axios(`https://cors-anywhere.herokuapp.com/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
-                .then(data2 => { const data = data2.data
-                    console.log(data)
-                    setDetails(data)
-                    setDates(data.date)
+
+        axios({
+            method: 'get',
+            url: `https://cors-anywhere.herokuapp.com/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
+            headers: {'Origin': `https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`}
+        }).then(data2 => { const data = data2.data
+            console.log(data)
+            setDetails(data)
+            setDates(data.date)
+     
+
+  })
+
+        // axios(`https://cors-anywhere.herokuapp.com/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
+        //         .then(data2 => { const data = data2.data
+        //             console.log(data)
+        //             setDetails(data)
+        //             setDates(data.date)
         
-          })}
+        //   })
+        }
 
           const getCat2 = () =>{
             axios(`https://www.fotmob.com/api/matches?date=${Number(dates)+1}&timezone=Asia%2FDhaka&ccode3=BGD`)
