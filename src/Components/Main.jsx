@@ -3,6 +3,19 @@ import styled from 'styled-components'
 import axios from "axios";
 
 const HeroSection = () => {
+    const [details , setDetails] = useState([]);
+
+    var x = new Date();
+    var y = x.getFullYear().toString();
+    var m = (x.getMonth() + 1).toString();
+    var d = x.getDate().toString();
+    (d.length == 1) && (d = '0' + d);
+    (m.length == 1) && (m = '0' + m);
+    var yyyymmdd = y + m + d;
+    const [dates , setDates] = useState(yyyymmdd);
+
+    
+
     const Wrapper = styled.section`
     display: flex;
     -webkit-box-pack: center;
@@ -20,12 +33,12 @@ const HeroSection = () => {
     margin: 0px 0px 30px 4px;
     color: var(--green);
     font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm),5vw,var(--fz-md));
+    font-size: clamp(var(--fz-sm),vw,var(--fz-md));
     font-weight: 400;
 }
 .big-heading {
     margin: 0px;
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: clamp(20px, 8vw, 40px);
     text-align: center;
 } 
 .big-heading2 {
@@ -95,32 +108,45 @@ a:hover:after{
         getCat();
 
 
-       
 
+    
         }, [])
-        const [details , setDetails] = useState([]);
+        
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       getCat();
+//     }, 10000);
+
+//     return () => clearInterval(interval);
+//   }, []);
 
     const getCat = () =>{
-        axios(`https://www.fotmob.com/api/matches?date=20230205&timezone=Asia%2FDhaka&ccode3=BGD`)
+        axios(`https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
                 .then(data2 => { const data = data2.data
                     console.log(data)
                     setDetails(data)
-                
+             
+        
+          })}
+
+          const getCat2 = () =>{
+            axios(`https://www.fotmob.com/api/matches?date=${Number(dates)+1}&timezone=Asia%2FDhaka&ccode3=BGD`)
+                    .then(data2 => { const data = data2.data
+                        console.log(data)
+                        setDetails(data)
+                        setDates(data.date)
                  
-                
-        
-          })
-              
-        
-        
-      }
+            
+              })}
   return (
     <Wrapper >
             {/* <div>
                 <h1> Today  </h1>
             </div> */}
             <div>
-                <h2 className='big-heading'>Today {details.date}    </h2>
+                <h1 className='big-heading'> Today {details.date}            </h1> 
+                <h4 className='big-heading' onClick={getCat2}> next day        </h4> 
+
             </div>
             {/* <div>
                 <h3 className="big-heading2"> The only thing I Love is Coding.</h3>
