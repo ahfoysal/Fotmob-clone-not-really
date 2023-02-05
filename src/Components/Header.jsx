@@ -171,7 +171,7 @@ a span:hover, a span:focus {
       <Wrapper>
         <Navbar key='md' id="navbar"  fixed='top'  expand={'md'} className="mb-3 headerX">
           <Container fluid>
-            <Navbar.Brand href="#" className='logo'>Pewds</Navbar.Brand>
+            <Navbar.Brand href="/" className='logo'>Pewds</Navbar.Brand>
             <Navbar.Toggle aria-controls='offcanvasNavbar-expand-md' />
             <Navbar.Offcanvas
             className='offcan'

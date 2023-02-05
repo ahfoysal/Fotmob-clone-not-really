@@ -114,16 +114,16 @@ a:hover:after{
     
         }, [])
         
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       getCat();
-//     }, 10000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getCat();
+    }, 10000);
 
-//     return () => clearInterval(interval);
-//   }, []);
+    return () => clearInterval(interval);
+  }, []);
 
     const getCat = () =>{
-        axios(`https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
+        axios(`https://cors-anywhere.herokuapp.com/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`)
                 .then(data2 => { const data = data2.data
                     console.log(data)
                     setDetails(data)
