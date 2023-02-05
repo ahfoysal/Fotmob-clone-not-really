@@ -172,7 +172,8 @@ a:hover:after{
             {/* <div>
                 <h1> Today  </h1>
             </div> */}
-            <div>
+            <div> 
+                <br /> <br /><br />
                 <h4  onClick={getCat3}>   Previous day   </h4>    <h1 className='big-heading' onClick={getCat}> Today {details.date}            </h1> 
                 <h4  onClick={getCat2}>  Next day  </h4> 
 
