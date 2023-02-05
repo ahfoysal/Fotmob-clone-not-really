@@ -11,6 +11,7 @@ const HeroSection = () => {
     flex-direction: column;
     align-items: flex-start;
     min-height: 100vh;
+    margin-top: 30px;
     padding: 0px;
     p{
         display: inline;
