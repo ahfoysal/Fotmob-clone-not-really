@@ -128,7 +128,7 @@ a:hover:after{
             method: 'get',
             url: `https://proxy.cors.sh/https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
             headers: {'Origin': `https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
-            'x-cors-api-key': `temp_daeedd8e97154a6570229c1dc57ee197`}
+            'x-cors-api-key': `${process.env.REACT_APP_KEY}`}
         }).then(data2 => { const data = data2.data
             console.log(data)
             setDetails(data)
@@ -147,7 +147,7 @@ a:hover:after{
                 method: 'get',
                 url: `https://proxy.cors.sh/https://www.fotmob.com/api/matches?date=${Number(dates)+1}&timezone=Asia%2FDhaka&ccode3=BGD`,
                 headers: {'Origin': `https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
-                'x-cors-api-key': `temp_daeedd8e97154a6570229c1dc57ee197`}
+                'x-cors-api-key': `${process.env.REACT_APP_KEY}`}
             }).then(data2 => { const data = data2.data
                 console.log(data)
                 setDetails(data)
@@ -162,7 +162,7 @@ a:hover:after{
                     method: 'get',
                     url: `https://proxy.cors.sh/https://www.fotmob.com/api/matches?date=${Number(dates)-1}&timezone=Asia%2FDhaka&ccode3=BGD`,
                     headers: {'Origin': `https://www.fotmob.com/api/matches?date=${yyyymmdd}&timezone=Asia%2FDhaka&ccode3=BGD`,
-                    'x-cors-api-key': `temp_daeedd8e97154a6570229c1dc57ee197`}
+                    'x-cors-api-key': `${process.env.REACT_APP_KEY}`}
                 }).then(data2 => { const data = data2.data
                     console.log(data)
                     setDetails(data)
