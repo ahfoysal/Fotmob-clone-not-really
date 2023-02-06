@@ -234,7 +234,7 @@ a:hover:after{
             setDetails(data)
             setDetails2(data.header?.events)
             setHomeGS(Object.keys(data?.header?.events?.homeTeamGoals))
-
+            console.log(1)
             setDates(data.date)
            
             // const myObject = details?.header?.events?.homeTeamGoals || {
@@ -289,7 +289,9 @@ a:hover:after{
                                     <ul>
                                         
                                      
-                                       {homeGS?.map(name => (   <li>   <span   style={{ marginRight: '5px' }}> {name} </span><span>,</span>    </li>))}
+                                       {homeGS?.map(name => (   <li key={name}>   <span   style={{ marginRight: '5px' }}> {name} </span> 
+                                       {/* <span>  {details?.header?.events?.homeTeamGoals?.name ?.map(time => time.timeStr)}</span> */}
+                                        <span>,</span>    </li>))}
                                         
                                      
                                         
