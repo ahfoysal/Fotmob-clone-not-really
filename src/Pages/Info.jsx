@@ -285,6 +285,69 @@ a:hover:after{
     width: 40px;
     height: 40px;
 }
+.PlayerIconCSS * {
+    border-radius: 50%;
+}
+.css-vpdota-LineupSubContainer {
+    position: absolute;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    top: -24px;
+    left: -6px;
+}
+.css-n6vdaq-LineupPlayerRatingContainer {
+    position: absolute;
+    left: 27px;
+    top: -8px;
+}
+.css-1mnesu9-PlayerRatingStyled {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 2px;
+    min-width: 32px;
+    min-height: 21px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    padding: 2px 6px;
+    background-color: rgb(240, 128, 34);
+}
+.css-1mnesu9-PlayerRatingStyled span {
+    white-space: nowrap;
+    letter-spacing: 0px;
+    font-family: GTWalsheim-Md;
+    font-size: 13px;
+    color: white;
+}
+.css-12i3ooo-MiddleLineupBadgesContainer {
+    position: absolute;
+    bottom: 31px;
+}
+.css-7z666k-LineupMissedPenaltyBadgeContainer {
+    position: absolute;
+    left: 33px;
+    display: flex;
+    flex-direction: row;
+}
+span{
+    color: white !important;
+    font-weight: 500;
+    font-size: 16px;
+}
+.css-1pb0mb5-LineupPlayerText {
+    margin-top: 10px;
+    color: var(--GlobalColorScheme-DefaultColor-white);
+    text-align: center;
+}
+.css-1y4ddg1-Shirt {
+    color: var(--GlobalColorScheme-DefaultColor-lightgreen);
+    margin-right: 10px;
+}
     `
       useEffect(() => {
         getCat();
@@ -400,7 +463,7 @@ a:hover:after{
                     
             </div>
             
-           <section className="css-7g2v2r-LineupMapContainer container">
+           <section className="css-7g2v2r-LineupMapContainer ">
            <div className="css-16vghmb-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" className="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" className="cls-1" data-name="Path 2175"></path></svg></div>
            <div className="css-c039tb-MiddleOfField eu5dgts2"></div>
            <div className="css-6tdo4x-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" className="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" className="cls-1" data-name="Path 2175"></path></svg></div>
@@ -413,11 +476,15 @@ a:hover:after{
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
-                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        
+                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
                         </div>
+                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                            <span>${name?.rating?.num}</span></div></div>
                         </div>
-                    
+                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                            5</span>Caldirola</span>
                      </div>
                 })}
            
@@ -429,11 +496,15 @@ a:hover:after{
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
-                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        
+                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
                         </div>
+                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                            <span>${name?.rating?.num}</span></div></div>
                         </div>
-                    
+                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                            5</span>Caldirola</span>
                      </div>
                 })}
            
@@ -445,11 +516,15 @@ a:hover:after{
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
-                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        
+                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
                         </div>
+                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                            <span>${name?.rating?.num}</span></div></div>
                         </div>
-                    
+                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                            5</span>Caldirola</span>
                      </div>
                 })}
            
@@ -461,11 +536,15 @@ a:hover:after{
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
-                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        
+                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
                         </div>
+                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                            <span>${name?.rating?.num}</span></div></div>
                         </div>
-                    
+                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                            5</span>Caldirola</span>
                      </div>
                 })}
            
@@ -477,11 +556,15 @@ a:hover:after{
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
-                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        
+                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
                         </div>
+                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                            <span>${name?.rating?.num}</span></div></div>
                         </div>
-                    
+                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                            5</span>Caldirola</span>
                      </div>
                 })}
            
