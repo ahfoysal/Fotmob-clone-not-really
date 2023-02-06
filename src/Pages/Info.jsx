@@ -244,6 +244,47 @@ a:hover:after{
     right: 0px;
     transform: rotate(90deg) translateY(-39%);
 }
+.TeamContainer {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+}
+.RowContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100%;
+    min-width: 80px;
+}
+.LineupPlayerContainer {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 15px;
+    padding-top: 12px;
+}
+.PlayerHeadContainer {
+    position: relative;
+}
+.PlayerIconCSS {
+    display: flex;
+    position: relative;
+    box-sizing: content-box;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    align-items: end;
+    background-color: var(--MFFullscreenColorScheme-playerIconBackground);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
     `
       useEffect(() => {
         getCat();
@@ -360,9 +401,99 @@ a:hover:after{
             </div>
             
            <section className="css-7g2v2r-LineupMapContainer container">
-           <div class="css-16vghmb-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" class="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" class="cls-1" data-name="Path 2175"></path></svg></div>
-           <div class="css-c039tb-MiddleOfField eu5dgts2"></div>
-           <div class="css-6tdo4x-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" class="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" class="cls-1" data-name="Path 2175"></path></svg></div>
+           <div className="css-16vghmb-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" className="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" className="cls-1" data-name="Path 2175"></path></svg></div>
+           <div className="css-c039tb-MiddleOfField eu5dgts2"></div>
+           <div className="css-6tdo4x-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" className="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" className="cls-1" data-name="Path 2175"></path></svg></div>
+            <div className="TeamContainer">
+                
+
+          
+           <div className="RowContainer">
+           {details?.content?.lineup?.lineup[0]?.players[0].map(name => {
+                    return      <div className="LineupPlayerContainer">
+                    <div className="PlayerHeadContainer">
+                        <div className="PlayerIconCSS">
+                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                        
+                        </div>
+                        </div>
+                    
+                     </div>
+                })}
+           
+             
+
+           </div>
+           <div className="RowContainer">
+           {details?.content?.lineup?.lineup[0]?.players[1].map(name => {
+                    return      <div className="LineupPlayerContainer">
+                    <div className="PlayerHeadContainer">
+                        <div className="PlayerIconCSS">
+                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                        
+                        </div>
+                        </div>
+                    
+                     </div>
+                })}
+           
+             
+
+           </div>
+           <div className="RowContainer">
+           {details?.content?.lineup?.lineup[0]?.players[2].map(name => {
+                    return      <div className="LineupPlayerContainer">
+                    <div className="PlayerHeadContainer">
+                        <div className="PlayerIconCSS">
+                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                        
+                        </div>
+                        </div>
+                    
+                     </div>
+                })}
+           
+             
+
+           </div>
+           <div className="RowContainer">
+           {details?.content?.lineup?.lineup[0]?.players[3].map(name => {
+                    return      <div className="LineupPlayerContainer">
+                    <div className="PlayerHeadContainer">
+                        <div className="PlayerIconCSS">
+                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                        
+                        </div>
+                        </div>
+                    
+                     </div>
+                })}
+           
+             
+
+           </div>
+           <div className="RowContainer">
+           {details?.content?.lineup?.lineup[0]?.players[4].map(name => {
+                    return      <div className="LineupPlayerContainer">
+                    <div className="PlayerHeadContainer">
+                        <div className="PlayerIconCSS">
+                        <img src={`${name.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                        
+                        </div>
+                        </div>
+                    
+                     </div>
+                })}
+           
+             
+
+           </div>
+          
+            </div>
+           
+           
+           
+           
            </section>
 
 
