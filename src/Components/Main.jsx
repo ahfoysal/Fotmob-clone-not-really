@@ -114,13 +114,13 @@ a:hover:after{
     
         }, [])
         
-  useEffect(() => {
-    const interval = setInterval(() => {
-      getCat();
-    }, 10000);
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       getCat();
+//     }, 10000);
 
-    return () => clearInterval(interval);
-  }, []);
+//     return () => clearInterval(interval);
+//   }, []);
 
     const getCat = () =>{
 
@@ -195,13 +195,13 @@ a:hover:after{
             </div> */}
             <div>
                 <div>
-                { details?.leagues?.map(team => (
+                { details.leagues?.map(team => (
                     <div key={team?.id}> <p> {team?.name}</p>
                          { team?.matches?.map(test => (
                             
-                        <div key={test?.id}> <Link to={`/match/${test.id}`}><p> {test?.home.name} {test?.home?.score} -  {test.away.score}{test.away.name}
-                        ({test?.status?.finished === true &&  <p>FT</p>}
-                        <p>{test?.status?.liveTime?.long}</p>)
+                        <div key={test.id}> <Link to={`/match/${test.id}`}><p> {test.home.name} {test.home.score} -  {test.away.score}{test.away.name}
+                        ({test.status?.finished === true &&  <span>FT</span>}
+                        <span>{test.status?.liveTime?.long}</span>)
                         </p>
                         </Link>
 
