@@ -9,6 +9,7 @@ import Tabs from 'react-bootstrap/Tabs';
 const HeroSection = () => {
     const [details , setDetails] = useState([]);
     const [details2 , setDetails2] = useState([]);
+         const [homeGS , setHomeGS] = useState([]);
 
 
     var x = new Date();
@@ -184,19 +185,39 @@ a:hover:after{
     -webkit-box-pack: start;
     justify-content: flex-start;
 }
+.GoalContainer {
+    display: grid;
+    grid-template-columns: 1fr 75px 1fr;
+    gap: 60px;
+    padding: 0px 15px 24px;
+}
+.GoalContainer ul:first-of-type {
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+.GoalContainer ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.GoalContainer li {
+    margin-right: 5px;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.16px;
+    list-style: none;
+}
     `
       useEffect(() => {
         getCat();
-        console.log(param)
-
-
+       
+       
     
         }, [])
         
 //   useEffect(() => {
 //     const interval = setInterval(() => {
-//       getCat();
-//     }, 10000);
+//       getCat2();
+//     }, 2000);
 
 //     return () => clearInterval(interval);
 //   }, []);
@@ -212,12 +233,23 @@ a:hover:after{
             console.log(data)
             setDetails(data)
             setDetails2(data.header?.events)
+            setHomeGS(Object.keys(data?.header?.events?.homeTeamGoals))
 
             setDates(data.date)
-     
-
+           
+            // const myObject = details?.header?.events?.homeTeamGoals || {
+            //     a: 'somestring',
+            //     b: 42,
+            //     c: false
+            //   };
+            //               var keyNames = Object.keys(myObject);
+            //                   console.log(keyNames)
+            //                   setHomeGS(keyNames)
+           
   })
+
         }
+        
 
          
   return (
@@ -249,8 +281,21 @@ a:hover:after{
                                 <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${details?.general?.awayTeam?.id}_small.png`} alt="" width="50" height="50"  style={{ marginRight: '20px' }} loading="lazy" />
                                 <span className='text-white'  style={{ fontSize: '24px' }}>{details?.general?.awayTeam?.name}</span>
                                 </div>
+                               
                         </header>
+
                     </section>
+                    <div className="GoalContainer">
+                                    <ul>
+                                        
+                                     
+                                       {homeGS?.map(name => (   <li>   <span   style={{ marginRight: '5px' }}> {name} </span><span>,</span>    </li>))}
+                                        
+                                     
+                                        
+
+                                    </ul>
+                                </div>
                 </div>
             <Tabs
       defaultActiveKey="1"
