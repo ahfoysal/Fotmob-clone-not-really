@@ -206,6 +206,44 @@ a:hover:after{
     letter-spacing: 0.16px;
     list-style: none;
 }
+.css-16vghmb-GoalContainer {
+    position: absolute;
+    top: 36%;
+    left: 0px;
+    transform: translateX(-22%) rotate(-90deg);
+}
+.css-7g2v2r-LineupMapContainer {
+    display: flex;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    height: 550px;
+    background-image: url(https://media.istockphoto.com/id/472347896/photo/striped-soccer-field.jpg?s=612x612&w=0&k=20&c=wgeavCCOimF1b5mrv9QNQuuJqs1ERX67pDjPT3yv8j8=);
+}
+.css-c039tb-MiddleOfField {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    width: 6px;
+    background-color: black;
+}
+.css-c039tb-MiddleOfField::after {
+    content: " ";
+    width: 150px;
+    height: 150px;
+    border: solid 6px black;
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 81px);
+    left: -78px;
+}
+.css-6tdo4x-GoalContainer {
+    position: absolute;
+    top: 36%;
+    right: 0px;
+    transform: rotate(90deg) translateY(-39%);
+}
     `
       useEffect(() => {
         getCat();
@@ -298,6 +336,10 @@ a:hover:after{
 
                                     </ul>
                                 </div>
+
+
+
+                                
                 </div>
             <Tabs
       defaultActiveKey="1"
@@ -317,7 +359,12 @@ a:hover:after{
                     
             </div>
             
-           
+           <section className="css-7g2v2r-LineupMapContainer container">
+           <div class="css-16vghmb-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" class="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" class="cls-1" data-name="Path 2175"></path></svg></div>
+           <div class="css-c039tb-MiddleOfField eu5dgts2"></div>
+           <div class="css-6tdo4x-GoalContainer eu5dgts1"><svg xmlns="http://www.w3.org/2000/svg" id="lineup_1_214x118" width="276" height="154" viewBox="0 0 316 174"><g id="Group_4486" fill="var(--MFFullscreenColorScheme-pitchLines)" data-name="Group 4486" transform="translate(84.168)"><path id="Path_2174" d="M57 0h5.907v50.136a5.92 5.92 0 0 0 5.907 5.9H192.85a5.92 5.92 0 0 0 5.907-5.9V0h5.907v50.136a11.84 11.84 0 0 1-11.813 11.8H68.813A11.84 11.84 0 0 1 57 50.136z" class="cls-1" data-name="Path 2174" transform="translate(-57)"></path></g><path id="Path_2175" fill="var(--MFFullscreenColorScheme-pitchLines)" d="M11.813 150.407h90.813a76.778 76.778 0 0 0 110.748 0h90.813A11.839 11.839 0 0 0 316 138.61V0h-5.906v138.61a5.92 5.92 0 0 1-5.907 5.9H11.813a5.92 5.92 0 0 1-5.907-5.9V0H0v138.61a11.84 11.84 0 0 0 11.813 11.797zm193 0a70.761 70.761 0 0 1-93.619 0z" class="cls-1" data-name="Path 2175"></path></svg></div>
+           </section>
+
 
     </Wrapper>
   )

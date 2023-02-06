@@ -89,7 +89,7 @@ li a {
             </ul>
 
             </div>
-                <p>Built by Pewds, Design inspired </p>
+                <p>Built and Design by Pewds </p>
     </Wrapper>
   )
 }
