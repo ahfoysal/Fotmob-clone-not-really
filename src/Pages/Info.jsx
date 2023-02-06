@@ -177,6 +177,13 @@ a:hover:after{
     font-family: GTWalsheim-Md;
     letter-spacing: 0.27px;
 }
+.TeamMarkup2 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
     `
       useEffect(() => {
         getCat();
@@ -228,15 +235,19 @@ a:hover:after{
                     <section className="HeaderFullscreenSection">
                         <header className="HeaderFullscreenHeader">
                                 <div className="TeamMarkup">
-                                    <span>{details?.general?.homeTeam?.name}</span>
+                                    <span  className='text-white'  style={{ fontSize: '24px' }}>{details?.general?.homeTeam?.name}</span>
              
                                     <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${details?.general?.homeTeam?.id}_small.png`} alt="" width="50" height="50"  style={{ marginLeft: '20px' }} loading="lazy" />
                                 </div>
                                 <div className="scores">
-                                    <span className='scorss'> {details?.header?.status?.scoreStr}</span>
+                                    <span className='scorss text-white'> {details?.header?.status?.scoreStr}</span>
                                     <span className="timess">
                                     {details?.header?.status?.reason?.long}
                                     </span>
+                                </div>
+                                <div className="TeamMarkup2">
+                                <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${details?.general?.awayTeam?.id}_small.png`} alt="" width="50" height="50"  style={{ marginRight: '20px' }} loading="lazy" />
+                                <span className='text-white'  style={{ fontSize: '24px' }}>{details?.general?.awayTeam?.name}</span>
                                 </div>
                         </header>
                     </section>
