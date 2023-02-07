@@ -492,7 +492,7 @@ span{
 
            </div>
            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[1].map(name => {
+           {details?.content?.lineup?.lineup[0]?.players[1]?.map(name => {
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
@@ -512,7 +512,7 @@ span{
 
            </div>
            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[2].map(name => {
+           {details?.content?.lineup?.lineup[0]?.players[2]?.map(name => {
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
@@ -532,7 +532,7 @@ span{
 
            </div>
            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[3].map(name => {
+           {details?.content?.lineup?.lineup[0]?.players[3]?.map(name => {
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
@@ -552,7 +552,7 @@ span{
 
            </div>
            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[4].map(name => {
+           {details?.content?.lineup?.lineup[0]?.players[4]?.map(name => {
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
