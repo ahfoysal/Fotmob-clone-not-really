@@ -472,7 +472,7 @@ span{
 
           
            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[0].map(name => {
+           {details?.content?.lineup?.lineup[0]?.players[0]?.map(name => {
                     return      <div className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
