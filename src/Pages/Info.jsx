@@ -553,7 +553,7 @@ span{
            </div>
            <div className="RowContainer">
            {details?.content?.lineup?.lineup[0]?.players[4]?.map(name => {
-                    return      <div className="LineupPlayerContainer">
+                    return      <div key={name?.name} className="LineupPlayerContainer">
                     <div className="PlayerHeadContainer">
                         <div className="PlayerIconCSS">
                         <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
@@ -564,7 +564,7 @@ span{
                         </div>
                         <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
                         <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>Caldirola</span>
+                            5</span>{name?.name}</span>
                      </div>
                 })}
            
