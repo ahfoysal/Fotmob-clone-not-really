@@ -399,7 +399,7 @@ span{
             <div className='container'>
                 <div className="match-info box">
                     <div className="GridContainer">
-                <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${details?.general?.leagueId}.png`} width="22" height="22" loading="lazy" alt=""  />
+                <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${details?.general?.parentLeagueId && details?.general?.parentLeagueId || details?.general?.id}.png`} width="22" height="22" loading="lazy" alt=""  />
                 <div className="HeaderLeagueCSS">
                 <h1 className='text-white mt-25 '>{details?.general?.leagueName} {details?.general?.leagueRoundName
 }</h1>
@@ -471,106 +471,32 @@ span{
                 
 
           
-            <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[0]?.map(name => {
-                    return      <div className="LineupPlayerContainer">
-                    <div className="PlayerHeadContainer">
-                        <div className="PlayerIconCSS">
-                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        </div>
-                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
-                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
-                            <span>${name?.rating?.num}</span></div></div>
-                        </div>
-                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
-                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>Caldirola</span>
-                     </div>
-                })}
+           
+            {details?.content?.lineup?.lineup[0]?.players?.map((name,index) => {
+                    return  <div className="RowContainer">      {details?.content?.lineup?.lineup[0]?.players[index]?.map(name => {
+                        return      <div className="LineupPlayerContainer">
+                        <div className="PlayerHeadContainer">
+                            <div className="PlayerIconCSS">
+                            <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
+                            </div>
+                            <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
+                          {name?.rating?.num &&  <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
+                                <span>{name?.rating?.num}</span></div></div>}
+                            </div>
+                            <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
+                            <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
+                               {name.shirt}</span>{name.name.lastName}</span>
+                         </div>
+                    })}</div>
+                
+                    })}
+
+       
            
              
 
-           </div>
-          {/* <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[1]?.map(name => {
-                    return      <div className="LineupPlayerContainer">
-                    <div className="PlayerHeadContainer">
-                        <div className="PlayerIconCSS">
-                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        </div>
-                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
-                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
-                            <span>${name?.rating?.num}</span></div></div>
-                        </div>
-                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
-                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>Caldirola</span>
-                     </div>
-                })}
-           
-             
-
-           </div>
-           <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[2]?.map(name => {
-                    return      <div className="LineupPlayerContainer">
-                    <div className="PlayerHeadContainer">
-                        <div className="PlayerIconCSS">
-                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        </div>
-                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
-                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
-                            <span>${name?.rating?.num}</span></div></div>
-                        </div>
-                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
-                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>Caldirola</span>
-                     </div>
-                })}
-           
-             
-
-           </div>
-           <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[3]?.map(name => {
-                    return      <div className="LineupPlayerContainer">
-                    <div className="PlayerHeadContainer">
-                        <div className="PlayerIconCSS">
-                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        </div>
-                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
-                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
-                            <span>${name?.rating?.num}</span></div></div>
-                        </div>
-                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
-                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>Caldirola</span>
-                     </div>
-                })}
-           
-             
-
-           </div>
-           <div className="RowContainer">
-           {details?.content?.lineup?.lineup[0]?.players[4]?.map(name => {
-                    return      <div key={name?.name} className="LineupPlayerContainer">
-                    <div className="PlayerHeadContainer">
-                        <div className="PlayerIconCSS">
-                        <img src={`${name?.imageUrl}`} className="Image PlayerImage" alt="" width="40" height="40" loading="lazy" />
-                        </div>
-                        <div className="css-vpdota-LineupSubContainer e1eitw0d13"></div>
-                        <div className="css-n6vdaq-LineupPlayerRatingContainer e1eitw0d9"><div className="css-1mnesu9-PlayerRatingStyled e1sodkt20">
-                            <span>${name?.rating?.num}</span></div></div>
-                        </div>
-                        <div className="css-12i3ooo-MiddleLineupBadgesContainer e1eitw0d2"><div className="css-7z666k-LineupMissedPenaltyBadgeContainer e1eitw0d7"></div></div>
-                        <span className="css-1pb0mb5-LineupPlayerText eo59uzm0"><span className="css-1y4ddg1-Shirt elhbny55">
-                            5</span>{name?.name}</span>
-                     </div>
-                })}
-           
-             
-
-           </div>*/}
+          
+      
           
             </div> 
            

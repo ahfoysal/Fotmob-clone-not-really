@@ -300,7 +300,7 @@ a:hover:after{
                        
                         
                         
-                            <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${team?.id}.png`} alt="https://pngimg.com/uploads/football/small/football_PNG52792.png"   width="20" height="20" loading="lazy" />
+                            <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${team?.parentLeagueId && team?.parentLeagueId || team?.id}.png`} alt="https://pngimg.com/uploads/football/small/football_PNG52792.png"   width="20" height="20" loading="lazy" />
                             <p className="GroupTitleLink">{team?.name}</p>
                        
                     </div>
