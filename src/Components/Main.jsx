@@ -499,7 +499,8 @@ a:hover:after{
                                     {test.home.score} - {test.away.score}
                                     </span>
                                     <span className="css-oiyag6-status">
-                                        FT
+                                    {test.status?.finished === true &&  <span>FT</span>}
+                      {test.status?.liveTime?.long &&  <span className='text-success'>{test.status?.liveTime?.long}'</span>}
                                     </span>
                            </div>
                            <span className="TeamName">
@@ -519,38 +520,7 @@ a:hover:after{
         
             
             
-            <div>
-                <div>
-                { details.leagues?.map(team => (
-                    <div key={team?.id}> 
-                    
-                    
-                    <div className="GroupHeaderContainer">
-                       
-                        
-                        
-                            <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${team?.parentLeagueId && team?.parentLeagueId || team?.id}.png`} alt="https://pngimg.com/uploads/football/small/football_PNG52792.png"   width="20" height="20" loading="lazy" />
-                            <p className="GroupTitleLink">{team?.name}</p>
-                       
-                    </div>
-                    
-                
-                         { team?.matches?.map(test => (
-                            
-                        <div key={test.id}> <Link to={`/match/${test.id}`}><p> {test.home.name} {test.home.score} -  {test.away.score}{test.away.name}
-                        ({test.status?.finished === true &&  <span>FT</span>}
-                        <span>{test.status?.liveTime?.long}</span>)
-                        </p>
-                        </Link>
-
-                        
-                         </div>
-        )) }
-                        <br></br>
-                         </div>
-        ))  }
-                </div>
-            </div>
+         
 
     </Wrapper>
   )
