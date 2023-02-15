@@ -13,12 +13,15 @@ body {
     line-height: 1.3 !important;
 }
 a {
-  display: inline-block !important;
+  /* display: inline-block !important;
   text-decoration: none !important;
   text-decoration-skip-ink: auto !important;
   color: var(--green) !important ;
   position: relative !important;
-  transition: var(--transition) !important;
+  transition: var(--transition) !important; */
+  color: white !important;
+  text-decoration: none !important;
+
 }
 
 code {

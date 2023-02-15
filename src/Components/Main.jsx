@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 
 const HeroSection = () => {
@@ -19,7 +21,7 @@ const HeroSection = () => {
     
 
     const Wrapper = styled.section`
-    display: flex;
+    /* display: flex;
     -webkit-box-pack: center;
     justify-content: center;
     -webkit-box-align: center;
@@ -27,7 +29,7 @@ const HeroSection = () => {
     align-items: flex-start;
     min-height: 100vh;
     margin-top: 30px;
-    padding: 0px;
+    padding: 0px; */
     p{
         display: inline;
     }
@@ -202,6 +204,195 @@ a:hover:after{
     font-size: 12px;
     color: var(--GlobalColorScheme-Text-secondaryText2);
 }
+.CardCSS     {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+.LeaguesBlockContainer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex-flow: column;
+    -webkit-flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    width: calc(100% - 20px);
+    height: 100%;
+}
+.LivescoreHeaderCSS {
+    border-bottom: var(--GlobalColorScheme-Divider);
+    width: 100%;
+    height: 80px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 20px;
+}
+.DatepickerCSS {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.DatepickerMobileButton {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.DatepickerButtonCSS-applyMediumHover {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 13px;
+    color: var(--GlobalColorScheme-IconColor);
+    font-family: "GTWalsheim-Md";
+    font-size: 21px;
+    height: 60px;
+}
+.LeaguesListWrapperCSS {
+    height: calc(100% - 60px);
+    width: 100%;
+    -webkit-animation: animation-1vfn007 ease 0s normal forwards 1;
+    animation: animation-1vfn007 ease 0s normal forwards 1;
+    -webkit-animation-duration: ms;
+    animation-duration: ms;
+}
+.LeaguesListItselfCSS {
+    height: calc(100% - 60px);
+    width: 100%;
+}
+.GroupHeaderContainer-applyMediumHover {
+    user-select: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+    font-family: GTWalsheim-Md;
+    font-size: 18px;
+    line-height: 1.11;
+    letter-spacing: 0.27px;
+    border-top: var(--GlobalColorScheme-Divider);
+}
+.GroupTitleLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 20px;
+    font-family: GTWalsheim-Md;
+    line-height: 1.11;
+    letter-spacing: 0.27px;
+    font-size: 18px;
+}
+.MatchWrapper1 {
+    position: relative;
+    display: grid;
+    -webkit-box-align: center;
+    place-items: center;
+    padding: 0px 5px;
+    grid-template-columns: 1fr 25px 40px 25px 1fr;
+    grid-template-rows: auto;
+    column-gap: 15px;
+    background: var(--GlobalColorScheme-Background-card);
+    font-family: GTWalsheim-Rg;
+    user-select: none;
+    height: 70px;
+    border-top: var(--GlobalColorScheme-Divider);
+}
+.MatchWrapper > span {
+    width: 100%;
+    text-align: right;
+}
+.TeamName {
+    font-size: 16px;
+    line-height: 1.13;
+    letter-spacing: 0.24px;
+    overflow: auto hidden;
+}
+.MatchWrapper > * {
+    grid-row: 1 / 1;
+}
+.StatusLSMatchWrapperCSS {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    row-gap: 5px;
+    justify-items: center;
+}
+.css-g3e0pm-score {
+    font-family: GTWalsheim-Md;
+    font-size: 16px;
+    white-space: nowrap;
+}
+.MatchWrapper > * {
+    grid-row: 1 / 1;
+}
+.css-oiyag6-status {
+    font-size: 12px;
+    color: var(--GlobalColorScheme-Text-secondaryText2);
+}
+.css-1cdc11f-GroupHeaderContainer-applyMediumHover {
+    user-select: none;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+    font-family: GTWalsheim-Md;
+    font-size: 18px;
+    line-height: 1.11;
+    letter-spacing: 0.27px;
+    border-top: var(--GlobalColorScheme-Divider);
+}
+.MatchWrapper > span:nth-of-type(2) {
+    grid-column: 5 / 5;
+    text-align: left;
+}
+.MatchWrapper > span {
+    width: 100%;
+    text-align: right;
+}
+.MatchWrapper img:last-of-type {
+    grid-column: 4 / 5;
+}
     `
       useEffect(() => {
         getCat();
@@ -279,15 +470,53 @@ a:hover:after{
           })}
   return (
     <Wrapper >
-            {/* <div>
-                <h1> Today  </h1>
-            </div> */}
-            <div> 
-                <br /> <br /><br />
-                <h4  onClick={getCat3}>   Previous day   </h4>    <h1 className='big-heading' onClick={getCat}> Today {details.date}            </h1> 
-                <h4  onClick={getCat2}>  Next day  </h4> 
+        <br /><br /><br />
+           <div className="CardCSS">
+            <section className="LeaguesBlockContainer">
+                <nav className="LivescoreHeaderCSS">
+                <div className="DatepickerCSS">
+                    <FaArrowLeft onClick={getCat3} />
+                    <div className="DatepickerMobileButton">
+        <span className="DatepickerButtonCSS-applyMediumHover"> {details.date === yyyymmdd && "Today"  || details.date} </span>
+                    </div>
+                    <FaArrowRight onClick={getCat2} />
+                </div>
+                </nav>
+                <section className="LeaguesListWrapperCSS">
+                    <div className="LeaguesListItselfCSS">
+                    { details.leagues?.map(team => (  <div>
+                            <div className="css-1cdc11f-GroupHeaderContainer-applyMediumHover">
+                            <img src={`https://images.fotmob.com/image_resources/logo/leaguelogo/dark/${team?.parentLeagueId && team?.parentLeagueId || team?.id}.png`} alt="https://pngimg.com/uploads/football/small/football_PNG52792.png"   width="20" height="20" loading="lazy" />
+                                <p className="GroupTitleLink">{team?.name}</p>
+                            </div>
+                            { team?.matches?.map(test => (
+                            
+                            <Link  className="MatchWrapper" to={`/match/${test.id}`}>
+                            <span className="TeamName">  {test.home.name} </span>
+                            <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${test.home.id}_small.png`} alt="" width="25" height="25"  style={{ marginLeft: '10px' }} loading="lazy" />
+                           <div className="StatusLSMatchWrapperCSS">
+                                    <span className="css-g3e0pm-score">
+                                    {test.home.score} - {test.away.score}
+                                    </span>
+                                    <span className="css-oiyag6-status">
+                                        FT
+                                    </span>
+                           </div>
+                           <span className="TeamName">
+                           {test.away.name}
+                           </span>
+                           <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${test.away.id}_small.png`} alt="" width="25" height="25"  style={{ marginRight: '10px' }} loading="lazy" />
 
-            </div>
+                            </Link>   
+            )) }
+                           
+                        </div> ))}
+                    </div>
+                </section>
+            </section>
+
+           </div>
+        
             
             
             <div>
