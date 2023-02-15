@@ -496,7 +496,8 @@ a:hover:after{
                             <img src={`https://images.fotmob.com/image_resources/logo/teamlogo/${test.home.id}_small.png`} alt="" width="25" height="25"  style={{ marginLeft: '10px' }} loading="lazy" />
                            <div className="StatusLSMatchWrapperCSS">
                                     <span className="css-g3e0pm-score">
-                                    {test.home.score} - {test.away.score}
+                                    {test.status?.started === true &&   <span>  {test.home.score} - {test.away.score} </span> }
+                                    {test.status?.started === false &&  <span style={{ paddingLeft: '10px', marginRight: '10px'  }}> {new Date(test.status?.utcTime).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}  </span>}
                                     </span>
                                     <span className="css-oiyag6-status">
                                     {test.status?.finished === true &&  <span>FT</span>}
