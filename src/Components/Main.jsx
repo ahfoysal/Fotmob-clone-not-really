@@ -75,6 +75,7 @@ p > a {
     font-size: var(--fz-sm);
     font-family: var(--font-mono);
     line-height: 1;
+    
     text-decoration: none;
     cursor: pointer;
     transition: var(--transition);
@@ -470,6 +471,7 @@ a:hover:after{
           })}
   return (
     <Wrapper >
+    
         <br /><br /><br />
            <div className="CardCSS">
             <section className="LeaguesBlockContainer">
@@ -504,6 +506,7 @@ a:hover:after{
                       {test.status?.liveTime?.long &&  <span className='text-success'>{test.status?.liveTime?.long}'</span>}
                                     </span>
                            </div>
+                           
                            <span className="TeamName">
                            {test.away.name}
                            </span>
