@@ -375,7 +375,7 @@ span{
         
 //   useEffect(() => {
 //     const interval = setInterval(() => {
-//       getCat2();
+//         getCat();
 //     }, 2000);
 
 //     return () => clearInterval(interval);
@@ -392,9 +392,14 @@ span{
             console.log(data)
             setDetails(data)
             setDetails2(data.header?.events)
+            let scorer = Object.keys(data?.header?.events?.homeTeamGoals)[0]
+            let scorerTime =  data?.header?.events?.homeTeamGoals.Lewandowski[0].time
+            // let timeee = ko
             setHomeGS(Object.keys(data?.header?.events?.homeTeamGoals))
-            console.log(1)
+           
             setDates(data.date)
+            console.log(data?.header?.events?.homeTeamGoals?.scorer?.time)
+            console.log(scorer,scorerTime)
            
             // const myObject = details?.header?.events?.homeTeamGoals || {
             //     a: 'somestring',
@@ -492,7 +497,7 @@ span{
           
            
             {details?.content?.lineup?.lineup[0]?.players?.map((name,index) => {
-                    return  <div className="RowContainer">      {details?.content?.lineup?.lineup[0]?.players[index]?.map(name => {
+                    return  <div className="RowContainer">      {details?.content?.lineup?.lineup[0]?.players[index]?.slice(0)?.reverse()?.map(name => {
                         return      <div className="LineupPlayerContainer">
                         <div className="PlayerHeadContainer">
                             <div className="PlayerIconCSS">
@@ -521,7 +526,7 @@ span{
             </div> 
             <div className="TeamContainer">
             {details?.content?.lineup?.lineup[1]?.players?.map((name,index) => {
-                    return  <div className="RowContainer">      {details?.content?.lineup?.lineup[1]?.players[index]?.map(name => {
+                    return  <div className="RowContainer">      {details?.content?.lineup?.lineup[1]?.players[index]?.slice(0)?.reverse()?.map(name => {
                         return      <div className="LineupPlayerContainer">
                         <div className="PlayerHeadContainer">
                             <div className="PlayerIconCSS">
